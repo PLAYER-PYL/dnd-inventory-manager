@@ -1,0 +1,24 @@
+// 服务器端移动物品逻辑
+socket.on('move-item', ({ itemId, from, to, targetPlayer }) => {
+  let item = null;
+  
+  // 从来源仓库移除物品
+  if (from === 'public') {
+    item = gameState.publicInventory.find(i => i.id === itemId);
+    gameState.publicInventory = gameState.publicInventory.filter(i => i.id !== itemId);
+  } else {
+    item = gameState.players[from].inventory.find(i => i.id === itemId);
+    gameState.players[from].inventory = gameState.players[from].inventory.filter(i => i.id !== itemId);
+  }
+  
+  // 添加到目标仓库
+  if (to === 'public') {
+    gameState.publicInventory.push({ ...item, owner: 'public' });
+  } else {
+    gameState.players[to].inventory.push({ ...item, owner: to });
+  }
+  
+  // 广播更新
+  io.emit('item-moved', { itemId, to, targetPlayer });
+  io.emit('game-state', gameState);
+});
