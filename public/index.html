@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>龙与地下城 - 仓库管理器</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 玩家面板 -->
+    <div class="players-panel">
+      <div class="player-card self">
+        <h2 contenteditable="true">你的名字</h2>
+        <button class="dice-btn" data-action="roll">🎲</button>
+        <div class="inventory">
+          <h3>私人仓库</h3>
+          <ul class="item-list" data-type="private"></ul>
+          <button class="add-item">+ 添加物品</button>
+        </div>
+      </div>
+      
+      <div class="other-players"></div>
+    </div>
+    
+    <!-- 公共仓库 -->
+    <div class="public-warehouse">
+      <h2>🏰 公共仓库</h2>
+      <ul class="item-list" data-type="public"></ul>
+      <button class="add-item">+ 添加物品</button>
+    </div>
+    
+    <!-- 操作日志 -->
+    <div class="action-log">
+      <h3>📜 冒险日志</h3>
+      <div class="log-entries"></div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
