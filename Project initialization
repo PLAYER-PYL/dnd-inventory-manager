@@ -1,0 +1,9 @@
+# 创建项目目录
+mkdir dnd-inventory-manager
+cd dnd-inventory-manager
+
+# 初始化项目
+npm init -y
+
+# 安装依赖
+npm install express socket.io uuid
