@@ -1,0 +1,7 @@
+dnd-inventory-manager/
+├── public/
+│   ├── index.html       # 主界面
+│   ├── style.css        # 样式
+│   └── app.js           # 客户端逻辑
+├── server.js            # 服务器
+└── package.json
