@@ -1,0 +1,86 @@
+/* 中世纪风格主题 */
+body {
+  background: #e9d8b6 url('parchment-texture.jpg');
+  font-family: 'Times New Roman', serif;
+  color: #3c2f2f;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.players-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.player-card {
+  background: rgba(205, 170, 125, 0.7);
+  border: 2px solid #8b4513;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.public-warehouse {
+  background: rgba(160, 140, 120, 0.6);
+  border: 3px double #5d2906;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.item-list {
+  min-height: 300px;
+  border: 1px dashed #8b4513;
+  padding: 10px;
+  margin: 10px 0;
+  list-style: none;
+}
+
+.item {
+  background: rgba(255, 255, 255, 0.4);
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  cursor: grab;
+}
+
+.item:hover {
+  background: rgba(255, 248, 220, 0.7);
+}
+
+.dice-btn {
+  background: #8b0000;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.dice-btn:hover {
+  transform: rotate(20deg) scale(1.1);
+}
+
+.action-log {
+  grid-column: span 2;
+  background: rgba(0, 0, 0, 0.1);
+  border-top: 3px groove #8b4513;
+  padding: 10px;
+}
+
+.log-entry {
+  font-style: italic;
+  margin: 5px 0;
+  color: #5d2906;
+}
